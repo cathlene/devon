@@ -15,7 +15,7 @@ import com.devonfw.application.jtqj.peoplemanagement.common.api.People;
  */
 @Entity
 @Table(name = "PEOPLE")
-public class PeopleEntity extends ApplicationPersistenceEntity implements People {
+public class PeopleEntity extends ApplicationPersistenceEntity<Long> implements People<Long> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,7 +47,6 @@ public class PeopleEntity extends ApplicationPersistenceEntity implements People
   @Override
   public Long getId() {
 
-    // TODO Auto-generated method stub
     return this.id;
   }
 
@@ -55,7 +54,6 @@ public class PeopleEntity extends ApplicationPersistenceEntity implements People
   public void setId(Long id) {
 
     this.id = id;
-
   }
 
 }

@@ -1,12 +1,12 @@
 package com.devonfw.application.jtqj.centermanagement.logic.api.to;
 
 import com.devonfw.application.jtqj.centermanagement.common.api.Center;
-import com.devonfw.module.basic.common.api.to.AbstractEto;
+import com.devonfw.application.jtqj.general.common.api.to.AbstractGenericEto;
 
 /**
  * Entity transport object of Center
  */
-public class CenterEto extends AbstractEto implements Center {
+public class CenterEto<T> extends AbstractGenericEto<T> implements Center<T> {
 
   private static final long serialVersionUID = 1L;
 
@@ -15,7 +15,7 @@ public class CenterEto extends AbstractEto implements Center {
   @Override
   public String getCenter_name() {
 
-    return center_name;
+    return this.center_name;
   }
 
   @Override
@@ -56,4 +56,5 @@ public class CenterEto extends AbstractEto implements Center {
     }
     return true;
   }
+
 }

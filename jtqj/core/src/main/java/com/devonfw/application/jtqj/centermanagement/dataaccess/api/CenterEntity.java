@@ -15,7 +15,7 @@ import com.devonfw.application.jtqj.general.dataaccess.api.ApplicationPersistenc
  */
 @Entity
 @Table(name = "CENTER")
-public class CenterEntity extends ApplicationPersistenceEntity implements Center {
+public class CenterEntity extends ApplicationPersistenceEntity<Long> implements Center<Long> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,7 +47,6 @@ public class CenterEntity extends ApplicationPersistenceEntity implements Center
   @Override
   public Long getId() {
 
-    // TODO Auto-generated method stub
     return this.id_center;
   }
 
@@ -55,7 +54,5 @@ public class CenterEntity extends ApplicationPersistenceEntity implements Center
   public void setId(Long id) {
 
     this.id_center = id;
-
   }
-
 }

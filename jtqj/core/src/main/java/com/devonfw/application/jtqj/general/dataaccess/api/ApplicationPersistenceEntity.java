@@ -14,11 +14,11 @@ import com.devonfw.module.basic.common.api.entity.PersistenceEntity;
  * implies that you have to annotate transient getter methods with the {@link Transient} annotation.
  */
 @MappedSuperclass
-public abstract class ApplicationPersistenceEntity implements ApplicationEntity, PersistenceEntity<Long> {
+public abstract class ApplicationPersistenceEntity<T> implements ApplicationEntity<T>, PersistenceEntity<T> {
 
   private static final long serialVersionUID = 1L;
 
-  // private Long id;
+  // private T id;
 
   private int modificationCounter;
 
@@ -33,13 +33,13 @@ public abstract class ApplicationPersistenceEntity implements ApplicationEntity,
   // @Override
   // @Id
   // @GeneratedValue(strategy = GenerationType.AUTO)
-  // public Long getId() {
+  // public T getId() {
   //
   // return this.id;
   // }
   //
   // @Override
-  // public void setId(Long id) {
+  // public void setId(T id) {
   //
   // this.id = id;
   // }
@@ -56,7 +56,7 @@ public abstract class ApplicationPersistenceEntity implements ApplicationEntity,
 
     this.modificationCounter = version;
   }
-
+  //
   // @Override
   // public String toString() {
   //
@@ -64,7 +64,7 @@ public abstract class ApplicationPersistenceEntity implements ApplicationEntity,
   // toString(buffer);
   // return buffer.toString();
   // }
-
+  //
   // /**
   // * Method to extend {@link #toString()} logic.
   // *

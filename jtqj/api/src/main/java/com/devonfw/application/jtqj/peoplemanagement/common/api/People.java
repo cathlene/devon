@@ -2,7 +2,7 @@ package com.devonfw.application.jtqj.peoplemanagement.common.api;
 
 import com.devonfw.application.jtqj.general.common.api.ApplicationEntity;
 
-public interface People extends ApplicationEntity {
+public interface People<T> extends ApplicationEntity<T> {
 
   /**
    * @return people_nameId

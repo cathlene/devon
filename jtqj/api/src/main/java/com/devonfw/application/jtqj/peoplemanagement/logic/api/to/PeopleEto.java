@@ -1,12 +1,12 @@
 package com.devonfw.application.jtqj.peoplemanagement.logic.api.to;
 
+import com.devonfw.application.jtqj.general.common.api.to.AbstractGenericEto;
 import com.devonfw.application.jtqj.peoplemanagement.common.api.People;
-import com.devonfw.module.basic.common.api.to.AbstractEto;
 
 /**
  * Entity transport object of People
  */
-public class PeopleEto extends AbstractEto implements People {
+public class PeopleEto<T> extends AbstractGenericEto<T> implements People<T> {
 
   private static final long serialVersionUID = 1L;
 
@@ -15,7 +15,7 @@ public class PeopleEto extends AbstractEto implements People {
   @Override
   public String getPeople_name() {
 
-    return people_name;
+    return this.people_name;
   }
 
   @Override
