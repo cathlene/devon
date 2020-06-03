@@ -22,7 +22,9 @@ import com.devonfw.application.jtqj.peoplecentermanagement.logic.base.usecase.Ab
 @Transactional
 public class UcManagePeopleCenterImpl extends AbstractPeopleCenterUc implements UcManagePeopleCenter {
 
-  /** Logger instance. */
+  /**
+   * Logger instance.
+   */
   private static final Logger LOG = LoggerFactory.getLogger(UcManagePeopleCenterImpl.class);
 
   @Override
@@ -46,4 +48,5 @@ public class UcManagePeopleCenterImpl extends AbstractPeopleCenterUc implements 
     LOG.debug("PeopleCenter with id '{}' has been created.", resultEntity.getId());
     return getBeanMapper().map(resultEntity, PeopleCenterEto.class);
   }
+
 }

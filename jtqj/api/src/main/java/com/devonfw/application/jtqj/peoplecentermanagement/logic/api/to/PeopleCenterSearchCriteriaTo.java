@@ -20,12 +20,17 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
 
   private Timestamp end_date;
 
+  private Long id;
+
+  private Integer yearmonthtart;
+
+  private Integer yearmonthend;
+
   /**
    * getter for peopleId attribute
    *
    * @return peopleId
    */
-
   public Long getPeopleId() {
 
     return this.peopleId;
@@ -34,7 +39,6 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
   /**
    * @param people setter for people attribute
    */
-
   public void setPeopleId(Long peopleId) {
 
     this.peopleId = peopleId;
@@ -45,7 +49,6 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
    *
    * @return centerId
    */
-
   public Long getCenterId() {
 
     return this.centerId;
@@ -54,7 +57,6 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
   /**
    * @param center setter for center attribute
    */
-
   public void setCenterId(Long centerId) {
 
     this.centerId = centerId;
@@ -63,7 +65,6 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
   /**
    * @return start_dateId
    */
-
   public Timestamp getStart_date() {
 
     return this.start_date;
@@ -72,7 +73,6 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
   /**
    * @param start_date setter for start_date attribute
    */
-
   public void setStart_date(Timestamp start_date) {
 
     this.start_date = start_date;
@@ -81,7 +81,6 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
   /**
    * @return end_dateId
    */
-
   public Timestamp getEnd_date() {
 
     return this.end_date;
@@ -90,10 +89,57 @@ public class PeopleCenterSearchCriteriaTo extends AbstractSearchCriteriaTo {
   /**
    * @param end_date setter for end_date attribute
    */
-
   public void setEnd_date(Timestamp end_date) {
 
     this.end_date = end_date;
+  }
+
+  /**
+   * @return idId
+   */
+  public Long getId() {
+
+    return id;
+  }
+
+  /**
+   * @param id setter for id attribute
+   */
+  public void setId(Long id) {
+
+    this.id = id;
+  }
+
+  /**
+   * @return yearmonthtartId
+   */
+  public Integer getYearmonthtart() {
+
+    return yearmonthtart;
+  }
+
+  /**
+   * @param yearmonthtart setter for yearmonthtart attribute
+   */
+  public void setYearmonthtart(Integer yearmonthtart) {
+
+    this.yearmonthtart = yearmonthtart;
+  }
+
+  /**
+   * @return yearmonthendId
+   */
+  public Integer getYearmonthend() {
+
+    return yearmonthend;
+  }
+
+  /**
+   * @param yearmonthend setter for yearmonthend attribute
+   */
+  public void setYearmonthend(Integer yearmonthend) {
+
+    this.yearmonthend = yearmonthend;
   }
 
 }

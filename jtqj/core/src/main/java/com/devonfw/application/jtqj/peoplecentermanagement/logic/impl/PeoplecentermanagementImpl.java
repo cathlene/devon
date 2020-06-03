@@ -47,4 +47,5 @@ public class PeoplecentermanagementImpl extends AbstractComponentFacade implemen
 
     return this.ucManagePeopleCenter.deletePeopleCenter(id);
   }
+
 }

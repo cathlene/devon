@@ -24,7 +24,9 @@ import com.devonfw.application.jtqj.peoplecentermanagement.logic.base.usecase.Ab
 @Transactional
 public class UcFindPeopleCenterImpl extends AbstractPeopleCenterUc implements UcFindPeopleCenter {
 
-  /** Logger instance. */
+  /**
+   * Logger instance.
+   */
   private static final Logger LOG = LoggerFactory.getLogger(UcFindPeopleCenterImpl.class);
 
   @Override

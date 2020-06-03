@@ -11,13 +11,11 @@ public interface PeopleCenter extends ApplicationEntity {
    *
    * @return peopleId
    */
-
   public Long getPeopleId();
 
   /**
    * @param people setter for people attribute
    */
-
   public void setPeopleId(Long peopleId);
 
   /**
@@ -25,37 +23,61 @@ public interface PeopleCenter extends ApplicationEntity {
    *
    * @return centerId
    */
-
   public Long getCenterId();
 
   /**
    * @param center setter for center attribute
    */
-
   public void setCenterId(Long centerId);
 
   /**
    * @return start_dateId
    */
-
   public Timestamp getStart_date();
 
   /**
    * @param start_date setter for start_date attribute
    */
-
   public void setStart_date(Timestamp start_date);
 
   /**
    * @return end_dateId
    */
-
   public Timestamp getEnd_date();
 
   /**
    * @param end_date setter for end_date attribute
    */
-
   public void setEnd_date(Timestamp end_date);
+
+  /**
+   * @return idId
+   */
+  public Long getId();
+
+  /**
+   * @param id setter for id attribute
+   */
+  public void setId(Long id);
+
+  /**
+   * @return yearmonthtartId
+   */
+  public Integer getYearmonthtart();
+
+  /**
+   * @param yearmonthtart setter for yearmonthtart attribute
+   */
+  public void setYearmonthtart(Integer yearmonthtart);
+
+  /**
+   * @return yearmonthendId
+   */
+  public Integer getYearmonthend();
+
+  /**
+   * @param yearmonthend setter for yearmonthend attribute
+   */
+  public void setYearmonthend(Integer yearmonthend);
 
 }

@@ -20,7 +20,6 @@ import com.devonfw.application.jtqj.peoplemanagement.dataaccess.api.PeopleEntity
 /**
  * @author cvanmoor
  */
-
 @Entity
 @Table(name = "PEOPLE_CENTER")
 public class PeopleCenterEntity extends ApplicationPersistenceEntity implements PeopleCenter {
@@ -41,6 +40,10 @@ public class PeopleCenterEntity extends ApplicationPersistenceEntity implements 
   private Timestamp start_date;
 
   private Timestamp end_date;
+
+  private Integer yearmonthtart;
+
+  private Integer yearmonthend;
 
   private static final long serialVersionUID = 1L;
 
@@ -168,6 +171,38 @@ public class PeopleCenterEntity extends ApplicationPersistenceEntity implements 
 
     this.id = id;
 
+  }
+
+  /**
+   * @return yearmonthtart
+   */
+  public Integer getYearmonthtart() {
+
+    return this.yearmonthtart;
+  }
+
+  /**
+   * @param yearmonthtart new value of {@link #getyearmonthtart}.
+   */
+  public void setYearmonthtart(Integer yearmonthtart) {
+
+    this.yearmonthtart = yearmonthtart;
+  }
+
+  /**
+   * @return yearmonthend
+   */
+  public Integer getYearmonthend() {
+
+    return this.yearmonthend;
+  }
+
+  /**
+   * @param yearmonthend new value of {@link #getyearmonthend}.
+   */
+  public void setYearmonthend(Integer yearmonthend) {
+
+    this.yearmonthend = yearmonthend;
   }
 
 }

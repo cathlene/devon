@@ -20,6 +20,12 @@ public class PeopleCenterEto extends AbstractEto implements PeopleCenter {
 
   private Timestamp end_date;
 
+  private Long id;
+
+  private Integer yearmonthtart;
+
+  private Integer yearmonthend;
+
   @Override
   public Long getPeopleId() {
 
@@ -128,4 +134,41 @@ public class PeopleCenterEto extends AbstractEto implements PeopleCenter {
     }
     return true;
   }
+
+  @Override
+  public Long getId() {
+
+    return id;
+  }
+
+  @Override
+  public void setId(Long id) {
+
+    this.id = id;
+  }
+
+  @Override
+  public Integer getYearmonthtart() {
+
+    return yearmonthtart;
+  }
+
+  @Override
+  public void setYearmonthtart(Integer yearmonthtart) {
+
+    this.yearmonthtart = yearmonthtart;
+  }
+
+  @Override
+  public Integer getYearmonthend() {
+
+    return yearmonthend;
+  }
+
+  @Override
+  public void setYearmonthend(Integer yearmonthend) {
+
+    this.yearmonthend = yearmonthend;
+  }
+
 }

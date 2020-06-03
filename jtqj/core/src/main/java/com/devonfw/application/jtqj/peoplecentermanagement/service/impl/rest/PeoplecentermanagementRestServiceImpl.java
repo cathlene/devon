@@ -42,4 +42,5 @@ public class PeoplecentermanagementRestServiceImpl implements Peoplecentermanage
 
     return this.peoplecentermanagement.findPeopleCenters(searchCriteriaTo);
   }
+
 }
