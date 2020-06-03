@@ -59,7 +59,7 @@ public class PeoplecentermanagementImpl extends AbstractComponentFacade implemen
   }
 
   @Override
-  public PeopleCenterCustomEto findPersonCenterDay(long id) {
+  public List<PeopleCenterCustomEto> findPersonCenterDay(long id) {
 
     return this.ucManagePeopleCenter.findPersonCenterDay(id);
   }

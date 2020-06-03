@@ -42,8 +42,8 @@ public interface PeoplecentermanagementRestService {
   public List<PeopleCenterCto> findPersonCenterDays();
 
   @GET
-  @Path("/peoplecenterdayExample/{id}/")
-  public PeopleCenterCustomEto findPersonCenterDay(@PathParam("id") long id);
+  @Path("/peoplecenterex1/{id}/")
+  public List<PeopleCenterCustomEto> findPersonCenterDay(@PathParam("id") long id);
 
   /**
    * Delegates to {@link Peoplecentermanagement#savePeopleCenter}.

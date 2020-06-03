@@ -36,7 +36,7 @@ public class PeoplecentermanagementRestServiceImpl implements Peoplecentermanage
   }
 
   @Override
-  public PeopleCenterCustomEto findPersonCenterDay(long id) {
+  public List<PeopleCenterCustomEto> findPersonCenterDay(long id) {
 
     return this.peoplecentermanagement.findPersonCenterDay(id);
   }

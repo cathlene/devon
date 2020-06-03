@@ -69,10 +69,15 @@ public class UcManagePeopleCenterImpl extends AbstractPeopleCenterUc implements 
   }
 
   @Override
-  public PeopleCenterCustomEto findPersonCenterDay(long id) {
+  public List<PeopleCenterCustomEto> findPersonCenterDay(long id) {
 
-    PeopleCenterCustom entity = getPeopleCenterRepository().findPersonCenterDay(id);
-    return getBeanMapper().map(entity, PeopleCenterCustomEto.class);
+    List<PeopleCenterCustom> list = getPeopleCenterRepository().findPersonCenterDay(id);
+    List<PeopleCenterCustomEto> list2 = new ArrayList<PeopleCenterCustomEto>();
+    for (PeopleCenterCustom entity : list) {
+      list2.add(getBeanMapper().map(entity, PeopleCenterCustomEto.class));
+    }
+
+    return list2;
   }
 
 }

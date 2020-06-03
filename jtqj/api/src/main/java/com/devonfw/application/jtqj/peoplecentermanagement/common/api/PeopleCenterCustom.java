@@ -8,9 +8,12 @@ import com.devonfw.application.jtqj.general.common.api.ApplicationEntity;
  */
 public interface PeopleCenterCustom extends ApplicationEntity {
 
-  /**
-   * @return idId
-   */
+  // public String getPeople_name();
+
+  // public Integer getNr_days();
+  //
+  // public String getCenter_name();
+
   @Override
   public Long getId();
 

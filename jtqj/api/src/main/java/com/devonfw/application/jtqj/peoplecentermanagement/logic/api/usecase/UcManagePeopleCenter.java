@@ -29,5 +29,5 @@ public interface UcManagePeopleCenter {
 
   List<PeopleCenterCto> findPersonCenterDays();
 
-  PeopleCenterCustomEto findPersonCenterDay(long id);
+  List<PeopleCenterCustomEto> findPersonCenterDay(long id);
 }
