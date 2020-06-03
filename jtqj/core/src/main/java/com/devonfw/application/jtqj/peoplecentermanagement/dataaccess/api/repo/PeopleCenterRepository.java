@@ -38,7 +38,8 @@ public interface PeopleCenterRepository extends DefaultRepository<PeopleCenterEn
   // @Query("select pc " + "from PeopleCenterEntity pc where pc.people.id= :id")
   // PeopleCenterCustom findPersonCenterDay(@Param("id") long id);
 
-  @Query("select pc " + "from PeopleCenterEntity pc inner join PeopleEntity p on p.id= pc.people.id")
+  @Query("select pc "
+      + "from PeopleCenterEntity pc inner join PeopleEntity p on p.id= pc.people.id inner join CenterEntity c on c.id_center= pc.center.id_center inner join CalendarEntity ca on ca.center.id_center = c.id_center")
   List<PeopleCenterCustom> findPersonCenterDay(@Param("id") long id);
 
   /**
