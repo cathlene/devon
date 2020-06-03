@@ -1,11 +1,14 @@
 package com.devonfw.application.jtqj.peoplecentermanagement.service.impl.rest;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.springframework.data.domain.Page;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.Peoplecentermanagement;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
 import com.devonfw.application.jtqj.peoplecentermanagement.service.api.rest.PeoplecentermanagementRestService;
@@ -23,6 +26,18 @@ public class PeoplecentermanagementRestServiceImpl implements Peoplecentermanage
   public PeopleCenterEto getPeopleCenter(long id) {
 
     return this.peoplecentermanagement.findPeopleCenter(id);
+  }
+
+  @Override
+  public List<PeopleCenterCto> findPersonCenterDays() {
+
+    return this.peoplecentermanagement.findPersonCenterDays();
+  }
+
+  @Override
+  public PeopleCenterCto findPersonCenterDay(long id) {
+
+    return this.peoplecentermanagement.findPersonCenterDay(id);
   }
 
   @Override

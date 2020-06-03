@@ -1,5 +1,7 @@
 package com.devonfw.application.jtqj.peoplecentermanagement.service.api.rest;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -12,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import org.springframework.data.domain.Page;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.Peoplecentermanagement;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
 
@@ -32,6 +35,14 @@ public interface PeoplecentermanagementRestService {
   @GET
   @Path("/peoplecenter/{id}/")
   public PeopleCenterEto getPeopleCenter(@PathParam("id") long id);
+
+  @GET
+  @Path("/peoplecenterdays/")
+  public List<PeopleCenterCto> findPersonCenterDays();
+
+  @GET
+  @Path("/peoplecenterday/{id}/")
+  public PeopleCenterCto findPersonCenterDay(@PathParam("id") long id);
 
   /**
    * Delegates to {@link Peoplecentermanagement#savePeopleCenter}.

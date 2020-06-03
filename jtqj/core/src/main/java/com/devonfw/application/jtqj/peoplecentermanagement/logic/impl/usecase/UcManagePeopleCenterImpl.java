@@ -1,5 +1,7 @@
 package com.devonfw.application.jtqj.peoplecentermanagement.logic.impl.usecase;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.inject.Named;
@@ -10,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.dataaccess.api.PeopleCenterEntity;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.usecase.UcManagePeopleCenter;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.base.usecase.AbstractPeopleCenterUc;
@@ -46,7 +49,28 @@ public class UcManagePeopleCenterImpl extends AbstractPeopleCenterUc implements 
     // initialize, validate peopleCenterEntity here if necessary
     PeopleCenterEntity resultEntity = getPeopleCenterRepository().save(peopleCenterEntity);
     LOG.debug("PeopleCenter with id '{}' has been created.", resultEntity.getId());
+
     return getBeanMapper().map(resultEntity, PeopleCenterEto.class);
+  }
+
+  @Override
+  public List<PeopleCenterCto> findPersonCenterDays() {
+
+    List<PeopleCenterEntity> list = getPeopleCenterRepository().findPersonCenterDays();
+    List<PeopleCenterCto> list2 = new ArrayList<PeopleCenterCto>();
+    for (PeopleCenterEntity entity : list) {
+      list2.add(getBeanMapper().map(entity, PeopleCenterCto.class));
+    }
+
+    return list2;
+
+  }
+
+  @Override
+  public PeopleCenterCto findPersonCenterDay(long id) {
+
+    PeopleCenterEntity entity = getPeopleCenterRepository().findPersonCenterDay(id);
+    return getBeanMapper().map(entity, PeopleCenterCto.class);
   }
 
 }

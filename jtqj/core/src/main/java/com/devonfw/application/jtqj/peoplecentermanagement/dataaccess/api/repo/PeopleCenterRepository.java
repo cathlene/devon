@@ -4,11 +4,14 @@ import static com.querydsl.core.alias.Alias.$;
 
 import java.sql.Timestamp;
 import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.dataaccess.api.PeopleCenterEntity;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
@@ -20,6 +23,16 @@ import com.querydsl.jpa.impl.JPAQuery;
  * {@link DefaultRepository} for {@link PeopleCenterEntity}
  */
 public interface PeopleCenterRepository extends DefaultRepository<PeopleCenterEntity> {
+
+  /**
+   * @param token
+   * @return the {@link BookingEntity} objects that matched the search.
+   */
+  @Query("select pc " + "from PeopleCenterEntity pc")
+  List<PeopleCenterEntity> findPersonCenterDays();
+
+  @Query("select pc " + "from PeopleCenterEntity pc where pc.id= :id")
+  PeopleCenterEntity findPersonCenterDay(@Param("id") long id);
 
   /**
    * @param criteria the {@link PeopleCenterSearchCriteriaTo} with the criteria to search.
