@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import com.devonfw.application.jtqj.general.logic.base.AbstractComponentFacade;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.Peoplecentermanagement;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCustomEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.usecase.UcFindPeopleCenter;
@@ -58,7 +59,7 @@ public class PeoplecentermanagementImpl extends AbstractComponentFacade implemen
   }
 
   @Override
-  public PeopleCenterCto findPersonCenterDay(long id) {
+  public PeopleCenterCustomEto findPersonCenterDay(long id) {
 
     return this.ucManagePeopleCenter.findPersonCenterDay(id);
   }

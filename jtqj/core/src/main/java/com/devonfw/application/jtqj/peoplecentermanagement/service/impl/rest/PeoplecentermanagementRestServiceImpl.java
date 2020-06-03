@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.Peoplecentermanagement;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCustomEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
 import com.devonfw.application.jtqj.peoplecentermanagement.service.api.rest.PeoplecentermanagementRestService;
@@ -35,7 +36,7 @@ public class PeoplecentermanagementRestServiceImpl implements Peoplecentermanage
   }
 
   @Override
-  public PeopleCenterCto findPersonCenterDay(long id) {
+  public PeopleCenterCustomEto findPersonCenterDay(long id) {
 
     return this.peoplecentermanagement.findPersonCenterDay(id);
   }

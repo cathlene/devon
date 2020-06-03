@@ -3,6 +3,7 @@ package com.devonfw.application.jtqj.peoplecentermanagement.logic.api.usecase;
 import java.util.List;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCustomEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 
 /**
@@ -28,5 +29,5 @@ public interface UcManagePeopleCenter {
 
   List<PeopleCenterCto> findPersonCenterDays();
 
-  PeopleCenterCto findPersonCenterDay(long id);
+  PeopleCenterCustomEto findPersonCenterDay(long id);
 }

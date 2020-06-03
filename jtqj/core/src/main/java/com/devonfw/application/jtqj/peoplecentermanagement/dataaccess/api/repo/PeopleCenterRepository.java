@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.devonfw.application.jtqj.peoplecentermanagement.common.api.PeopleCenterCustom;
 import com.devonfw.application.jtqj.peoplecentermanagement.dataaccess.api.PeopleCenterEntity;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
 import com.devonfw.module.jpa.dataaccess.api.QueryUtil;
@@ -32,7 +33,7 @@ public interface PeopleCenterRepository extends DefaultRepository<PeopleCenterEn
   List<PeopleCenterEntity> findPersonCenterDays();
 
   @Query("select pc " + "from PeopleCenterEntity pc where pc.id= :id")
-  PeopleCenterEntity findPersonCenterDay(@Param("id") long id);
+  PeopleCenterCustom findPersonCenterDay(@Param("id") long id);
 
   /**
    * @param criteria the {@link PeopleCenterSearchCriteriaTo} with the criteria to search.

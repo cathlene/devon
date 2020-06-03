@@ -15,6 +15,7 @@ import org.springframework.data.domain.Page;
 
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.Peoplecentermanagement;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCustomEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterSearchCriteriaTo;
 
@@ -41,8 +42,8 @@ public interface PeoplecentermanagementRestService {
   public List<PeopleCenterCto> findPersonCenterDays();
 
   @GET
-  @Path("/peoplecenterday/{id}/")
-  public PeopleCenterCto findPersonCenterDay(@PathParam("id") long id);
+  @Path("/peoplecenterdayExample/{id}/")
+  public PeopleCenterCustomEto findPersonCenterDay(@PathParam("id") long id);
 
   /**
    * Delegates to {@link Peoplecentermanagement#savePeopleCenter}.

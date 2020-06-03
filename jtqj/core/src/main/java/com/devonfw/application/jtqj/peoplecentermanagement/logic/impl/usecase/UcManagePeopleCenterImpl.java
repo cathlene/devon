@@ -11,8 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
+import com.devonfw.application.jtqj.peoplecentermanagement.common.api.PeopleCenterCustom;
 import com.devonfw.application.jtqj.peoplecentermanagement.dataaccess.api.PeopleCenterEntity;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCto;
+import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterCustomEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.to.PeopleCenterEto;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.api.usecase.UcManagePeopleCenter;
 import com.devonfw.application.jtqj.peoplecentermanagement.logic.base.usecase.AbstractPeopleCenterUc;
@@ -67,10 +69,10 @@ public class UcManagePeopleCenterImpl extends AbstractPeopleCenterUc implements 
   }
 
   @Override
-  public PeopleCenterCto findPersonCenterDay(long id) {
+  public PeopleCenterCustomEto findPersonCenterDay(long id) {
 
-    PeopleCenterEntity entity = getPeopleCenterRepository().findPersonCenterDay(id);
-    return getBeanMapper().map(entity, PeopleCenterCto.class);
+    PeopleCenterCustom entity = getPeopleCenterRepository().findPersonCenterDay(id);
+    return getBeanMapper().map(entity, PeopleCenterCustomEto.class);
   }
 
 }
