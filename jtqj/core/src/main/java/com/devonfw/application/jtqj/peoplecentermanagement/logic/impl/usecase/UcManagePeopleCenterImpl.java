@@ -75,9 +75,20 @@ public class UcManagePeopleCenterImpl extends AbstractPeopleCenterUc implements 
     List<PeopleCenterCustomEto> list2 = new ArrayList<PeopleCenterCustomEto>();
     for (PeopleCenterCustom entity : list) {
       list2.add(getBeanMapper().map(entity, PeopleCenterCustomEto.class));
-    }
 
+    }
     return list2;
+
+    // List<PeopleCenterCustom> list = getPeopleCenterRepository().findPersonCenterDay(id);
+    // List<PeopleCenterCustomCto> list2 = new ArrayList<PeopleCenterCustomCto>();
+    // for (PeopleCenterCustom entity : list) {
+    // PeopleCenterCustomCto cto = new PeopleCenterCustomCto();
+    // cto.setPeopleCenterCustom(getBeanMapper().map(entity, PeopleCenterCustomEto.class));
+    // cto.setPeople(getBeanMapper().map(entity, PeopleEto.class));
+    // cto.setCenter(getBeanMapper().map(entity, CenterEto.class));
+    // list2.add(cto);
+    // }
+    // return list2;
   }
 
 }

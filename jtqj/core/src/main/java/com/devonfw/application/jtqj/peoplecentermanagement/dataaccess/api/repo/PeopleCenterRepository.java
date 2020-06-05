@@ -38,8 +38,18 @@ public interface PeopleCenterRepository extends DefaultRepository<PeopleCenterEn
   // @Query("select pc " + "from PeopleCenterEntity pc where pc.people.id= :id")
   // PeopleCenterCustom findPersonCenterDay(@Param("id") long id);
 
-  @Query("select pc "
-      + "from PeopleCenterEntity pc inner join PeopleEntity p on p.id= pc.people.id inner join CenterEntity c on c.id_center= pc.center.id_center inner join CalendarEntity ca on ca.center.id_center = c.id_center")
+  // @Query("select pc,p,c,ca "
+  // + "from PeopleCenterEntity pc inner join PeopleEntity p on p.id= pc.people.id inner join CenterEntity c on
+  // c.id_center= pc.center.id_center inner join CalendarEntity ca on ca.center.id_center = c.id_center")
+  // List<PeopleCenterCustom> findPersonCenterDay(@Param("id") long id);
+
+  /**
+   * @param id
+   * @return
+   */
+  // @Query("select p.people_name,c.center_name from PeopleEntity p inner join PeopleCenterEntity pc on p.id=
+  // pc.people.id inner join CenterEntity c on c.id_center= pc.center.id_center")
+  @Query(value = "select p.people_name, c.center_name, c.modificationCounter,sum(ca.days_number) as nr_days from people_center pc inner join people p on pc.id_people = p.id_people inner join center c on c.id_center= pc.id_center inner join calendar ca on ca.id_center = c.id_center group by p.id_people, c.center_name ,c.modificationCounter", nativeQuery = true)
   List<PeopleCenterCustom> findPersonCenterDay(@Param("id") long id);
 
   /**
